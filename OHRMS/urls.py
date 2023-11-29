@@ -25,4 +25,4 @@ urlpatterns = [
     path('user/', include('user.urls'))
 ] 
 
-urlpatterns += staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()
