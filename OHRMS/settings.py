@@ -86,14 +86,14 @@ DATABASES = {
         'PORT': '',
     }
 }
-# database_url = os.environ.get("DATABASES_URL")
-# # Parse the PostgreSQL database URL
-# url = "postgres://ohrmsdb_user:rYCzLOMytQXtRhQ0rAneqbXUa3XptJR4@dpg-cljnhe98mmjc73da4kj0-a.oregon-postgres.render.com/ohrmsdb"
-# parsed_db = dj_database_url.parse(database_url)
+database_url = os.environ.get("DATABASES_URL")
+# Parse the PostgreSQL database URL
+url = "postgres://ohrmsdb_user:rYCzLOMytQXtRhQ0rAneqbXUa3XptJR4@dpg-cljnhe98mmjc73da4kj0-a.oregon-postgres.render.com/ohrmsdb"
+parsed_db = dj_database_url.parse(database_url)
 
-# # Update the 'default' database configuration
+# Update the 'default' database configuration
 
-# DATABASES['default'].update(parsed_db)
+DATABASES['default'].update(parsed_db)
 # Password validation
 
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
