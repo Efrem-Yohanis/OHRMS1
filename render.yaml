@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: OHRMS
-    buildCommand: "./build.sh"
-    env: python
-    startCommand: "gunicorn OHRMS.wsgi:application"
