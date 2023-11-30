@@ -86,9 +86,9 @@ DATABASES = {
         'PORT': '',
     }
 }
-database_url = os.environ.get("DATABASES_URL")
+database_url = "postgres://ohrmsdb_user:rYCzLOMytQXtRhQ0rAneqbXUa3XptJR4@dpg-cljnhe98mmjc73da4kj0-a/ohrmsdb"
 # Parse the PostgreSQL database URL
-url = "postgres://ohrmsdb_user:rYCzLOMytQXtRhQ0rAneqbXUa3XptJR4@dpg-cljnhe98mmjc73da4kj0-a.oregon-postgres.render.com/ohrmsdb"
+# url = "postgres://ohrmsdb_user:rYCzLOMytQXtRhQ0rAneqbXUa3XptJR4@dpg-cljnhe98mmjc73da4kj0-a.oregon-postgres.render.com/ohrmsdb"
 parsed_db = dj_database_url.parse(database_url)
 
 # Update the 'default' database configuration
