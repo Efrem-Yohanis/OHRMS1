@@ -33,6 +33,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  
 </head>
 
 <body>
@@ -41,7 +42,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{% url 'admin' %}" class="logo d-flex align-items-center">
         <img src="{% static 'assets/img/logo.jpg' %}" alt="">
         <span class="d-none d-lg-block">Qa Test Tool</span>
       </a>
@@ -115,34 +116,40 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
+      
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+        <a href="{% url 'admin' %}" class="nav-link collapsed" >
+          <i class="bi bi-grid"></i><span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+        </li>
+
+          <li class="nav-item">
+            <a href="{% url 'manage_user' %}" class="nav-link collapsed" >
+              <i class="bx bx-image-add"></i><span>Manage User</span>
+            </a>
+            </li>
+          
+      <li class="nav-item">
+        <a href="{% url 'new_account' %}" class="nav-link collapsed">
+          <i class="bx bx-image-add"></i><span>New Account</span>
+        </a>
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" >
-          <i class="bx bx-image-add"></i><span>Manage User</span>
+        <a href="{% url 'pending_post' %}" class="nav-link collapsed">
+          <i class="bx bx-image-add"></i><span>Approve Post</span>
         </a>
-    
-      </li><!-- End Components Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-search"></i><span>Approve Post</span>
+        <a href="{% url 'manage-reques' %}" class="nav-link collapsed">
+          <i class="bx bx-image-add"></i><span>Manage Reques</span>
         </a>
-    
-      </li><!-- End Components Nav -->
+      </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="ri ri-account-circle-fill"></i><span>Manage Reques</span>
-        </a>
-    
-      </li><!-- End Components Nav -->
+     
 
+      
 
 
       
@@ -150,22 +157,13 @@
     </ul>
 
   </aside><!-- End Sidebar-->
-
+  {% block content %}
   <main id="main" class="main">
     <section class="section mt-5">
-     
 
-        {% block content %}
-
-         
-        {% endblock %}
-
-
-      
     </section>
-
   </main><!-- End #main -->
-
+  {% endblock %}
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
