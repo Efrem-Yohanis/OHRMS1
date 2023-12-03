@@ -23,5 +23,8 @@ urlpatterns = [
     path('new_account/',new_account,name='new_account'),
     path('manage_reques/',manage_reques,name='manage-reques'),
     
+    # ---------------------------------------------------------------------------- #
+    
+    path('house_detail/',house_detail,name='house-detail'),
     
 ]

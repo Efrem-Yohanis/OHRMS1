@@ -67,3 +67,8 @@ def new_account(request):
 
 def manage_reques(request):
     return render(request,'manage_reques.html')
+
+
+
+def house_detail(request):
+    return render(request,'house_detail.html')
