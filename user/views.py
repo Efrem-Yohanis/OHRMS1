@@ -72,3 +72,7 @@ def manage_reques(request):
 
 def house_detail(request):
     return render(request,'house_detail.html')
+
+
+def post_house(request):
+    return render(request,'post_house.html')
