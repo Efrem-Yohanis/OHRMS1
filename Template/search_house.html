@@ -8,9 +8,8 @@
 
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Post house</h4>
+            <h4 class="card-title">Search house</h4>
             <hr>
-
             <!-- General Form Elements -->
             <form>
               <div class="row mb-3">
@@ -19,60 +18,16 @@
                   <input type="text" class="form-control">
                 </div>
               </div>
-              
-             
               <div class="row mb-3">
                 <label for="inputNumber" class="col-sm-2 col-form-label">Price</label>
                 <div class="col-sm-10">
                   <input type="number" class="form-control">
                 </div>
               </div>
-
-              <div class="row mb-3">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Describtion</label>
-                <div class="col-sm-10">
-                  <textarea class="form-control" style="height: 100px"></textarea>
-                </div>
-              </div>
-
-
-              <div class="row mb-3">
-                <label for="inputText" class="col-sm-2 col-form-label">Image 1</label>
-                <div class="col-sm-10">
-                  <input type="file" class="form-control">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputText" class="col-sm-2 col-form-label">Image 2</label>
-                <div class="col-sm-10">
-                  <input type="file" class="form-control">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputText" class="col-sm-2 col-form-label">Image 3</label>
-                <div class="col-sm-10">
-                  <input type="file" class="form-control">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputText" class="col-sm-2 col-form-label">Image 4</label>
-                <div class="col-sm-10">
-                  <input type="file" class="form-control">
-                </div>
-              </div>
-              
-           
-
-             
-              
-          
-
-            
- 
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label"></label>
                 <div class="col-sm-10">
-                  <button type="submit" class="btn btn-primary">Submit Form</button>
+                  <button type="submit" class="btn btn-primary">Search house</button>
                 </div>
               </div>
 
@@ -82,6 +37,82 @@
         </div>
 
       </div>
+
+      <div class="row">
+        <!-- Sales Card -->
+        <div class="col-xxl-3 col-md-6">
+          <div class="card">
+            <a href="{% url 'house-detail' %}">
+            <img src="{% static 'assets/img/image1.jpg' %}" class="card-img-top" alt="...">
+          </a>
+            <div class="card-body">
+              <hr>
+              <p>
+                Location: <span>Bole</span>
+              </p>
+              <p>
+                Price: <span>10000</span>
+              </p>
+            </div>
+         
+          </div><!-- End Card with an image on top -->
+
+        </div><!-- End Sales Card -->
+
+        <div class="col-xxl-3 col-md-6">
+          <div class="card">
+            <img src="{% static 'assets/img/image2.jpg' %}" class="card-img-top" alt="...">
+          
+            <div class="card-body">
+              <hr>
+              <p>
+                Location: <span>Bole</span>
+              </p>
+              <p>
+                Price: <span>10000</span>
+              </p>
+            </div>
+          </div><!-- End Card with an image on top -->
+
+        </div><!-- End Sales Card -->
+
+        <div class="col-xxl-3 col-md-6">
+          <div class="card">
+            <img src="{% static 'assets/img/image3.jpg' %}" class="card-img-top" alt="...">
+          
+            <div class="card-body">
+              <hr>
+              <p>
+                Location: <span>Bole</span>
+              </p>
+              <p>
+                Price: <span>10000</span>
+              </p>
+            </div>
+          </div><!-- End Card with an image on top -->
+
+        </div><!-- End Sales Card -->
+
+    
+  
+   
+       <div class="col-xxl-3 col-md-6">
+          <div class="card">
+            <img src="{% static 'assets/img/image1.jpg' %}" class="card-img-top" alt="...">
+          
+            <div class="card-body">
+              <hr>
+              <p>
+                Location: <span>Bole</span>
+              </p>
+              <p>
+                Price: <span>10000</span>
+              </p>
+            </div>
+          </div><!-- End Card with an image on top -->
+        </div><!-- End Sales Card -->
+        </div><!-- End Sales Card -->
+
 </div>
 
 {% endblock %}
