@@ -76,3 +76,7 @@ def house_detail(request):
 
 def post_house(request):
     return render(request,'post_house.html')
+
+
+def search_house(request):
+    return render(request,'search_house.html')

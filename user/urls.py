@@ -27,6 +27,8 @@ urlpatterns = [
     
     path('house_detail/',house_detail,name='house-detail'),
     path('post_house/',post_house,name='post-house'),
+    path('search_house/',search_house,name='search-house'),
+    
     
     
 ]
