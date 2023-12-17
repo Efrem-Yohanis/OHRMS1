@@ -48,8 +48,20 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
+             
+              {% if messages %}
+  
+    {% for message in messages %}
+    
+    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+ 
+{% endif %}
               <!-- End Logo -->
+             
 
               <div class="card mb-3">
 
@@ -61,10 +73,10 @@
                     <hr>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-
+                  <form class="row g-3 needs-validation" novalidate method="POST">
+                     {% csrf_token %}
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label" id="usename-lable">Username</label>
+                      <label for="yourUsername" class="form-label" id="usename-lable" name="username">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="text" name="username" class="form-control" id="yourUsername" required>
@@ -73,7 +85,7 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label" id="password-lable">Password</label>
+                      <label for="yourPassword" class="form-label" id="password-lable" name="password">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>

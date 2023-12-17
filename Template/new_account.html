@@ -2,14 +2,23 @@
 {% block content %}
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>New Account</h1>
+        <h1 class="mt-2">New Account</h1>
+        {% if messages %}
+        {% for mess in messages %}
+        <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+         {{mess}}
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
       </div><!-- End Page Title -->
-    <section class="section mt-5">
+    <section class="section ">
 <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">New Account</h5>
         <!-- Table with stripped rows -->
+        
         <table class="table table-striped">
           <thead>
             <tr>
@@ -23,18 +32,18 @@
             </tr>
           </thead>
           <tbody>
+            {% for user in all_unapproved %}
             <tr>
               <td>2016-05-25</td>
-              <th scope="row">Efrem Yohanis</th>
-              <td>efrem@craft.com</td>
-              <td>25170023</td>
-              <td><i class="btn btn-success ri ri-checkbox-circle-line"></i> </td> 
-              
-              <td><i class="btn btn-danger ri ri-close-circle-line"></i> </td> 
+              <th scope="row">{{user.first_name}} {{user.last_name}}</th>
+              <td>{{user.email}}</td>
+              <td>{{user.phone}}</td>
+              <td><a href="{% url 'activate_user' user.id %}" class="btn btn-success ri ri-checkbox-circle-line"></a> </td> 
+              <td><a href="{% url 'reject_user' user.id %}" class="btn btn-danger ri ri-close-circle-line"></a> </td> 
              
             </tr>
 
-           
+           {% endfor %}
            
           </tbody>
         </table>

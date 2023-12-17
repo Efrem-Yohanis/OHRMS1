@@ -43,7 +43,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="{% url 'admin' %}" class="logo d-flex align-items-center">
+      <a href="{% url 'admin-dashbord' %}" class="logo d-flex align-items-center">
         <img src="{% static 'assets/img/logo.jpg' %}" alt="">
         <span class="d-none d-lg-block">Qa Test Tool</span>
       </a>
@@ -71,14 +71,16 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+           {% if admin.profile_pic %}
+            <img src="{{admin.profile_pic.url}}" alt="Profile" class="rounded-circle">
+            {% endif %}
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{request.user.first_name}} {{request.user.last_name}}</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6>{{request.user.first_name}} {{request.user.last_name}}</h6>
+              <span>Admin</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -98,7 +100,7 @@
            
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'logout' %}">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -119,7 +121,7 @@
 
       
       <li class="nav-item">
-        <a href="{% url 'admin' %}" class="nav-link collapsed" >
+        <a href="{% url 'admin-dashbord' %}" class="nav-link collapsed" >
           <i class="bi bi-grid"></i><span>Dashboard</span>
         </a>
         </li>

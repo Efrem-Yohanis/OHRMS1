@@ -3,157 +3,43 @@
 {% load static %}
 
       <div class="row">
-        <!-- Left side columns -->
+       {% if messages %}
+         {% for mess in messages %}
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+         {{mess}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+         {% endfor %}
+       {% endif %}
         <div class="col-lg-12">
           <div class="row">
             <!-- Sales Card -->
+            {% if all_aproved_house %}
+            {% for house in all_aproved_house %}
             <div class="col-xxl-3 col-md-6">
               <div class="card">
-                <a href="{% url 'house-detail' %}">
-                <img src="{% static 'assets/img/image1.jpg' %}" class="card-img-top" alt="...">
+                <a href="{% url 'house-detail' house.id  %}">
+                  {% if house.image1  %}
+                <img src="{{house.image1.url}}" class="card-img-top" alt="...">
+                  {% endif %}
               </a>
                 <div class="card-body">
                   <hr>
                   <p>
-                    Location: <span>Bole</span>
+                    Location: <span>{{house.location}}</span>
                   </p>
                   <p>
-                    Price: <span>10000</span>
+                    Price: <span>{{house.price}}</span>
                   </p>
                 </div>
              
               </div><!-- End Card with an image on top -->
     
             </div><!-- End Sales Card -->
-
-            <div class="col-xxl-3 col-md-6">
-              <div class="card">
-                <img src="{% static 'assets/img/image2.jpg' %}" class="card-img-top" alt="...">
-              
-                <div class="card-body">
-                  <hr>
-                  <p>
-                    Location: <span>Bole</span>
-                  </p>
-                  <p>
-                    Price: <span>10000</span>
-                  </p>
-                </div>
-              </div><!-- End Card with an image on top -->
-    
+            {% endfor %}
+            {% endif %}
             </div><!-- End Sales Card -->
-
-            <div class="col-xxl-3 col-md-6">
-              <div class="card">
-                <img src="{% static 'assets/img/image3.jpg' %}" class="card-img-top" alt="...">
-              
-                <div class="card-body">
-                  <hr>
-                  <p>
-                    Location: <span>Bole</span>
-                  </p>
-                  <p>
-                    Price: <span>10000</span>
-                  </p>
-                </div>
-              </div><!-- End Card with an image on top -->
-    
-            </div><!-- End Sales Card -->
-
-            <div class="col-xxl-3 col-md-6">
-              <div class="card">
-                <img src="{% static 'assets/img/image.avif' %}" class="card-img-top" alt="...">
-              
-                <div class="card-body">
-                  <hr>
-                  <p>
-                    Location: <span>Bole</span>
-                  </p>
-                  <p>
-                    Price: <span>10000</span>
-                  </p>
-                </div>
-              </div><!-- End Card with an image on top -->
-    
-            </div><!-- End Sales Card -->
-
-            <div class="col-xxl-3 col-md-6">
-              <div class="card">
-                <img src="{% static 'assets/img/image6.jpg' %}" class="card-img-top" alt="...">
-              
-                <div class="card-body">
-                  <hr>
-                  <p>
-                    Location: <span>Bole</span>
-                  </p>
-                  <p>
-                    Price: <span>10000</span>
-                  </p>
-                </div>
-              </div><!-- End Card with an image on top -->
-    
-            </div><!-- End Sales Card -->
-
-            <div class="col-xxl-3 col-md-6">
-              <div class="card">
-                <img src="{% static 'assets/img/image7.jpg' %}" class="card-img-top" alt="...">
-              
-                <div class="card-body">
-                  <hr>
-                  <p>
-                    Location: <span>Bole</span>
-                  </p>
-                  <p>
-                    Price: <span>10000</span>
-                  </p>
-                </div>
-              </div><!-- End Card with an image on top -->
-    
-            </div><!-- End Sales Card -->
-
-            <div class="col-xxl-3 col-md-6">
-              <div class="card">
-                <img src="{% static 'assets/img/image4.jpg' %}" class="card-img-top" alt="...">
-              
-                <div class="card-body">
-                  <hr>
-                  <p>
-                    Location: <span>Bole</span>
-                  </p>
-                  <p>
-                    Price: <span>10000</span>
-                  </p>
-                </div>
-              </div><!-- End Card with an image on top -->
-    
-            </div><!-- End Sales Card -->
-
-           <div class="col-xxl-3 col-md-6">
-              <div class="card">
-                <img src="{% static 'assets/img/image1.jpg' %}" class="card-img-top" alt="...">
-              
-                <div class="card-body">
-                  <hr>
-                  <p>
-                    Location: <span>Bole</span>
-                  </p>
-                  <p>
-                    Price: <span>10000</span>
-                  </p>
-                </div>
-              </div><!-- End Card with an image on top -->
-    
-            </div><!-- End Sales Card -->
-
-            
-          
-            </div><!-- End Sales Card -->
-
-
-          
-
-           
-
           </div>
         </div><!-- End Left side columns -->
 

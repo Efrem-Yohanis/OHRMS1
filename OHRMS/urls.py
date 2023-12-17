@@ -22,12 +22,17 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
 from django.contrib.auth import urls as auth_urls
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('user.urls')),
+    path('', include('account.urls')),
+    path('user/', include('user.urls')),
+    path('admin_site/', include('admin_site.urls')),
+    path('api/', include('api.urls')),
     
 ] 
 
 urlpatterns += staticfiles_urlpatterns()
-
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

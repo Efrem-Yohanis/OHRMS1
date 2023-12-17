@@ -12,14 +12,14 @@
     <div class="card">
         <div class="card-body">
 
-            <h1>Welcome, Mr Efrem Yohanis!</h1>
+            <h1>Welcome, {{serach_user.first_name}} {{serach_user.last_name}}!</h1>
     
             <p>Thank you for registering an account with us.</p>
             
             <p>Here are your login details:</p>
             <ul>
-                <li><strong>Username:</strong>efrem</li>
-                <li><strong>Password:</strong>e2rtQ4ge4</li>
+                <li><strong>Username:</strong><span class="badge bg-success"> {{username}}</span></li>
+                <li><strong>Password:</strong> <span class="badge bg-success"> {{password}}</span></li>
             </ul>
             
             <p>Please keep your login details secure and do not share them with anyone.</p>

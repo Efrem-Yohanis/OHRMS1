@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>House Listing Approval</title>
+</head>
+<body>
+    <h1>Congratulations! Your House Listing Has Been Approved</h1>
+    <p>Dear {{ req_house.user.first_name }} {{ req_house.user.last_name }},</p>
+    <p>We are pleased to inform you that your house listing has been successfully reviewed and approved by our administrator. Your property is now live and visible to potential renters or buyers.</p>
+
+    <h2>Listing Details:</h2>
+    <ul>
+        <li>Property Location: {{ req_house.location }}</li>
+        <li>Rental Price/Selling Price: {{ req_house.price }}</li>
+        <li>Posted date: {{ req_house.crated_date }}</li>
+        
+    </ul>
+
+    <p>We believe that your house offers an excellent opportunity for individuals or families seeking a comfortable and welcoming home. With its notable features and amenities, we are confident that it will attract interested parties.</p>
+
+    <p>Your listing will now be showcased on our website, where prospective tenants or buyers can browse through available properties. We will also actively promote your listing through our marketing channels to maximize its visibility.</p>
+
+    <p>If you have any updates or changes to make to your listing, feel free to reach out to us, and we will assist you promptly.</p>
+
+    <p>Thank you for choosing our platform to showcase your property, and we wish you the best in finding suitable tenants or buyers. Should you have any questions or require further assistance, please don't hesitate to contact our support team.</p>
+
+    <p>Best regards,</p>
+    <p>OHRMS</p>
+    <p>ohrms@gmail.com</p>
+</body>
+</html>

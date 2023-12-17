@@ -6,7 +6,7 @@
         <h1>Manage Request</h1>
        
       </div><!-- End Page Title -->
-    <section class="section mt-5">
+    <section class="section mt-2">
         <div class="col-lg-12">
 
             <div class="card">
@@ -22,25 +22,44 @@
                       <th scope="col">Location</th>
                       <th scope="col">Price</th>
                       <th scope="col">email</th>
-                      <th scope="col">Phone</th>
+                      
+                      <th scope="col">Status</th>
                       <th scope="col">Approve</th>
                       <th scope="col">Reject</th>
                     </tr>
                   </thead>
                   <tbody>
+                    {% if all_request %}
+                    {% for req in all_request %}
                     <tr>
-                      <td>2016-05-25</td>
-                      <th scope="row">Efrem Yohanis</th>
-                      <td>Bole</td>
-                      <td>10000</td>
-                      <td>efrem@gmail.com</td>
-                      <td>251700223</td>
-                      <td><i class="btn btn-success ri ri-checkbox-circle-line"></i> </td> 
+
+                
+                      <td>{{req.crated_date}}</td>
+                      <th scope="row">{{req.Request_by.first_name}} {{req.Request_by.last_name}}</th>
+                      <td>{{req.house_info.location}}</td>
+                      <td>{{req.house_info.price}}</td>
+                      <td>{{req.Request_by.email}}</td>
+                     
+                     
+                      {% if req.status == 'REQUEST_APPROVED' %}
+                      <td>Pending</span></td>
+                      <td><span class="badge bg-info text-white">REQUEST APPROVED</span> </td>
+                      {% elif req.status == 'REQUEST_REJECTED' %}
+                      <td ><span class="badge bg-danger text-white">REQUEST REJECTED</span></td>
+                      {% elif req.status == 'REQUEST_ON_PROCESS' %}
+                      <td><span class="badge bg-warning text-white ">REQUEST ON PROCESS</span></td>
+                      {% else %}
+                      <td><span class="badge bg-success text-white">REQUEST COMPLETED</span></td>
+                      {% endif %}
+
+
                       
+                      <td><a href="{% url 'approve_booking_request' req.id %}" class="btn btn-success ri ri-checkbox-circle-line"></a> </td> 
                       <td><i class="btn btn-danger ri ri-close-circle-line"></i> </td> 
                      
                     </tr>
-        
+                    {% endfor %}
+                    {% endif %}
                    
                    
                   </tbody>
