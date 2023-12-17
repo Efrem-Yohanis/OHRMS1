@@ -82,7 +82,6 @@ WSGI_APPLICATION = 'OHRMS.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -93,12 +92,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-database_url = "postgres://ohrmsdb_user:rYCzLOMytQXtRhQ0rAneqbXUa3XptJR4@dpg-cljnhe98mmjc73da4kj0-a/ohrmsdb"
-
-parsed_db = dj_database_url.parse(database_url)
-
-DATABASES['default'].update(parsed_db)
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
